@@ -1,7 +1,7 @@
 The snp_marker.py algorithm takes as input two files:
 
-A file in a txt format containing the name of the strain and the associated cluster separated by a tab.
-And a multifasta file containing the snps of each strain.
+1 - A file in a txt format containing the name of the strain and the associated cluster separated by a tab.
+2 - A multifasta file containing the snps of each strain.
 
 Running snp_marker:
 
