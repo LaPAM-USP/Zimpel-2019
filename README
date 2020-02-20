@@ -5,7 +5,7 @@ The snp_marker.py algorithm takes as input two files:
 
 Running snp_marker:
 
-Open the Terminal in the directory containing the algorithm and the input files and enter the following command:
+Open Terminal in a directory containing the algorithm and the input files and enter the following command:
 
 python3 snp_marker.py
 
