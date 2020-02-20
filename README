@@ -1,0 +1,12 @@
+The snp_marker.py algorithm takes as input two files:
+
+A file in a txt format containing the name of the strain and the associated cluster separated by a tab.
+And a multifasta file containing the snps of each strain.
+
+Running snp_marker:
+
+Open the terminal in the directory containing the algorithm and the input files and enter the following command:
+
+python3 snp_marker.py
+
+The generated output is a table containing the cluster, snp and position of the snp in the fasta file.
