@@ -2,6 +2,11 @@
 #Zimpel et al., 2020. "Global distribution and evolution of Mycobacterium bovis lineages".
 #Author: Naila C. Soler Camargo
 
+#The snp_marker.py algorithm takes as input two files:
+#i) A file in a txt format containing the name of the strain and the associated cluster separated by a tab.
+#ii) A multifasta file containing the snps of each strain.
+#Expected output: a table containing the cluster, snp and position of the snp in the fasta file.
+
 import glob
 from Bio import SeqIO
 
