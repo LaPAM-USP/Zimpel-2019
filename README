@@ -1,18 +1,1 @@
-The snp_marker.py algorithm takes as input two files:
-
-1 - A file in a txt format containing the name of the strain and the associated cluster separated by a tab.
-2 - A multifasta file containing the snps of each strain.
-
-Running snp_marker:
-
-Open Terminal in a directory containing the algorithm and the input files and enter the following command:
-
-python3 snp_marker.py
-
-The generated output is a table containing the cluster, snp and position of the snp in the fasta file.
-
-The build_snp_alignment_positions.py takes as input the vcf files and the 
-#instructions to generate the snps files are described in the "Snps_pipeline" file.
-#input: vcf files
-#reference: fasta format
-#outputs: snp matrix and tsv file containing SNPs positions
+The instructions for running the algorithms, inputs and expected outputs are in the respective script file.
