@@ -10,3 +10,9 @@ Open Terminal in a directory containing the algorithm and the input files and en
 python3 snp_marker.py
 
 The generated output is a table containing the cluster, snp and position of the snp in the fasta file.
+
+The build_snp_alignment_positions.py takes as input the vcf files and the 
+#instructions to generate the snps files are described in the "Snps_pipeline" file.
+#input: vcf files
+#reference: fasta format
+#outputs: snp matrix and tsv file containing SNPs positions
