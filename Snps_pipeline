@@ -16,7 +16,7 @@ bwa index reference_genome.fasta
 #map to sorted bam
 \ls *.fq.gz | cut -f 1 -d _ | sort -u | parallel -N1 -j5 'bwa mem -t 4 AF2122.fasta {}_1_paired.fq.gz {}_2_paired.fq.gz | samtools sort -o {}.bam; pileup.sh in={}.bam > coverage/{}.pu.out 2> coverage/{}.pu.err.txt; samtools coverage {}.bam > coverage/{}.st.out 2> coverage/{}.st.err'
 
-#check depth in RDs positions:
+#check depth in RDs positions (developed by Robson Francisco de Souza):
 \ls *.bam | parallel --citation -N1 -j5 "samtools depth {} | awk '\$2 >= #POSITION1NITIAL# && \$2 <= #POSITION2FINAL#{a+=\$3;n++}END{print \"{.}\t\",a/n}'"
 
 #Parallel citation:
