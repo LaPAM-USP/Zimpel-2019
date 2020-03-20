@@ -61,8 +61,7 @@ for f in $(ls *.vcf):; do java -Xmx4g -jar ~/snpEff/snpEff.jar -v -no-downstream
 #remove genes
 for i in *.vcf; do awk -F'\t' '! ($8 ~ /13E12|PE_PGRS|Transposase|Integrase|integrase|transposase|PPE|Resolvase|resolvase|Phage|phage|Maturase|PE family|PE|pe1|pe2|p3|pe4|pe5|pe6|pe7|pe8|pe9|CONSERVED 13E12/) {print}' $i > $i.vcf ; done
 
-#Remove lines with INDELS in the columns 4 and 5 -
-
+#Remove lines with INDELS in the columns 4 and 5
 for i in *.vcf.vcf; do awk 'length($4)<2 {print}' $i > $i.vcf; done
 
 for i in *.vcf.vcf.vcf; do awk 'length($5)<2 {print}' $i > $i.txt; done
@@ -74,19 +73,12 @@ for i in *.vcf.vcf.vcf.txt; do awk -F'\t' '! ($8 ~ /HET=1/) {print}' $i > $i.txt
 #Commands below are to prepare the files to run the snp matrix pipeline in python
 #add new column (1st column, filled with 1)
 
-for i in *.vcf.vcf.vcf.txt.txt; do awk '{$0="1\t"$0}1' $i > $i.txt; done
+for i in *.txt; do awk '{$0="1\t"$0}1' $i > $i.txt; done
 
 #remmove column 4
-for i in *.vcf.vcf.vcf.txt.txt.txt; do awk -i inplace '{$0=gensub(/\s*\S+/,"",4)}1' $i
+for i in *.txt; do awk -i inplace '{$0=gensub(/\s*\S+/,"",4)}1' $i
 
 #Remove vcf header
-for f in *.vcf.vcf.vcf.txt.txt.txt ; do sed -i '' '/#/d' $f ; done
+for f in *.txt ; do sed -i '' '/#/d' $f ; done
 
 
-
-#rename
-
-#(*.bam.dupl.bam.mpileup.varscan.vcf.annot.vcf.vcf.vcf.txt.txt.txt)
-for file in *.bam.dupl.bam.mpileup.varscan.vcf.annot.vcf.vcf.vcf.txt.txt.txt;
-do mv "$file" "${file/.bam.dupl.bam.mpileup.varscan.vcf.annot.vcf.vcf.vcf.txt.txt/}"
-done
